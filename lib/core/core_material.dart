@@ -1,4 +1,5 @@
-import 'package:anti_ux_quest/home_page.dart';
+import 'package:anti_ux_quest/core/core_utils.dart';
+import 'package:anti_ux_quest/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
 class CoreMaterial extends StatefulWidget {
@@ -11,6 +12,7 @@ class CoreMaterial extends StatefulWidget {
 class _CoreMaterialState extends State<CoreMaterial> {
   @override
   Widget build(BuildContext context) {
+    CoreUtils.init(context);
     return MaterialApp(
       home: HomePage(),
       theme: ThemeData(useMaterial3: false),
