@@ -11,6 +11,11 @@ class CoreMaterial extends StatefulWidget {
 class _CoreMaterialState extends State<CoreMaterial> {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: HomePage());
+    return MaterialApp(
+      home: HomePage(),
+      theme: ThemeData(useMaterial3: false),
+      darkTheme: ThemeData.dark(useMaterial3: false),
+      themeMode: ThemeMode.dark,
+    );
   }
 }
