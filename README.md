@@ -12,7 +12,6 @@ Transformar conceitos abstratos de **Design System**, **Acessibilidade (WCAG)** 
 
 Cada campo deste playground é munido de um pesadelo de UX:
 
-* 👤 **Nome Completo:** O campo altera a ordem do texto aleatoriamente conforme você digita.
 * 🎂 **Data de Nascimento:** Selecionável apenas por um *slider* contínuo de 0 a 30.000 dias de vida.
 * 📞 **Telefone:** Um seletor numérico (`<input type="number">`) com botões de incremento `+` e `-`.
 * 🔒 **Senha:** Exige requisitos contraditórios em tempo real (ex: *"deve conter o dia da semana em aramaico"* e *"múltiplo de 7"*).
