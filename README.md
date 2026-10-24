@@ -60,9 +60,3 @@ Tem uma ideia de campo ainda pior? Sinta-se à vontade para enviar uma Pull Requ
 3. Faça o **Commit** das suas alterações (`git commit -m 'Add: Input de CEP que exige código Morse'`)
 4. Faça o **Push** para a Branch (`git push origin feature/pior-input-do-mundo`)
 5. Abra uma **Pull Request**
-
----
-
-## 📜 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](https://www.google.com/search?q=LICENSE) para mais detalhes.
