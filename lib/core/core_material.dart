@@ -1,23 +1,25 @@
-import 'package:anti_ux_quest/core/core_utils.dart';
 import 'package:anti_ux_quest/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
-class CoreMaterial extends StatefulWidget {
+class CoreMaterial extends StatelessWidget {
   const CoreMaterial({super.key});
-
-  @override
-  State<CoreMaterial> createState() => _CoreMaterialState();
-}
-
-class _CoreMaterialState extends State<CoreMaterial> {
   @override
   Widget build(BuildContext context) {
-    CoreUtils.init(context);
     return MaterialApp(
-      home: HomePage(),
-      theme: ThemeData(useMaterial3: false),
-      darkTheme: ThemeData.dark(useMaterial3: false),
+      debugShowCheckedModeBanner: false,
+      title: 'Anti-UX Quest',
+      home: const HomePage(),
+      darkTheme: ThemeData.dark(useMaterial3: true),
       themeMode: ThemeMode.dark,
+      theme: ThemeData(
+        useMaterial3: true,
+        scaffoldBackgroundColor: const Color(0xFFF5F1E8),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color(0xFF536CF4),
+          brightness: Brightness.light,
+        ),
+        fontFamily: 'Roboto',
+      ),
     );
   }
 }
