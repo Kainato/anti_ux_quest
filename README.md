@@ -1,4 +1,4 @@
-# 😈 Anti-UX Playground
+# 😈 Anti-UX Quest
 
 O **Anti-UX Playground** é uma aplicação interativa criada com um único propósito: reunir as **piores decisões de experiência do usuário** possíveis em um único formulário. A ideia é criar um ambiente absurdamente caótico e frustrante para que desenvolvedores, designers e entusiastas possam refletir sobre acessibilidade e usability... enquanto tentam (e falham) preencher um simples cadastro.
 
