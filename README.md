@@ -8,7 +8,7 @@ O **Anti-UX Quest** é uma aplicação interativa criada com um único propósit
 
 Transformar conceitos abstratos de **Design System**, **Acessibilidade (WCAG)** e **Heurísticas de Nielsen** em um contraexemplo prático e divertido. Em vez de apenas ler o que *não* fazer, você vivencia a dor do usuário em sua forma mais pura.
 
-## 💣 Obstáculos (Futuramente) Implementados
+## 💣 Obstáculos Futuros
 
 Cada campo deste playground é munido de um pesadelo de UX:
 
