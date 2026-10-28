@@ -36,10 +36,6 @@ cd anti-ux-playground
 flutter pub get
 ```
 
-5. **Boa sorte**
-
-😉🤣
-
 ## 🤝 Como Contribuir
 
 Tem uma ideia de campo ainda pior? Sinta-se à vontade para enviar uma Pull Request!
