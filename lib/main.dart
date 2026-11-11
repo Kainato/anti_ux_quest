@@ -1,15 +1,8 @@
-import 'package:anti_ux_quest/core/core_material.dart';
 import 'package:flutter/material.dart';
 
+import 'app/app.dart';
+import 'app/composition_root.dart';
+
 void main() {
-  runApp(const MainApp());
-}
-
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const CoreMaterial();
-  }
+  runApp(AntiUxQuestApp(controller: buildQuestController()));
 }

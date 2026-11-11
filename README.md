@@ -85,8 +85,17 @@ O app também pode ser executado nos alvos Flutter configurados neste repositór
 
 ## Estrutura de pastas (resumo)
 
-- lib/main.dart: inicialização do app
-- lib/pages/home_page.dart: fluxo principal da campanha
-- lib/controller: estado e controle de jogo
-- lib/class e lib/enum: modelos e tipos de apoio
-- lib/core: tema, utilitários e componentes compartilhados
+O projeto segue Clean Architecture, organizado por feature:
+
+- lib/main.dart: ponto de entrada
+- lib/app: MaterialApp, tema e raiz de composição (injeção de dependências)
+- lib/features/quest/domain: entidades, regras de vitória, contratos de repositório e casos de uso (sem dependência de Flutter)
+- lib/features/quest/data: fontes de dados e implementações dos repositórios (fases e progresso)
+- lib/features/quest/presentation: controller, página, widgets e um widget por desafio
+
+Para criar uma nova fase:
+
+1. Adicione um valor em `ChallengeType`.
+2. Cadastre o `Level` em `levels_local_data_source.dart`.
+3. Crie o widget do desafio em `presentation/challenges` e registre-o em `challenge_factory.dart`.
+4. Se houver validação, coloque a regra em `ChallengeRules`.
