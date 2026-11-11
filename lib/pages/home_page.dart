@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 const _ink = Color(0xFF20211D);
-// const _paper = Color(0xFFF5F1E8);
+const _paper = Color(0xFFF5F1E8);
 const _yellow = Color(0xFFFFD447);
 const _coral = Color(0xFFFF6D52);
 const _blue = Color(0xFF536CF4);
@@ -818,13 +818,14 @@ class _HomePageState extends State<HomePage> {
                 top: (_buttonSlot ~/ 3) * 55.0,
                 child: FilledButton(
                   onPressed: () {
-                    if (_buttonSlot >= 5)
+                    if (_buttonSlot >= 5) {
                       _success();
-                    else
+                    } else {
                       setState(() {
                         _buttonSlot++;
                         _notice = 'Quase! O botão mudou de lugar.';
                       });
+                    }
                   },
                   style: FilledButton.styleFrom(
                     backgroundColor: _coral,
@@ -1018,10 +1019,11 @@ class _HomePageState extends State<HomePage> {
         _confirmations == 0 ? 'SIM, CONTINUAR' : 'SIM, TENHO CERTEZA',
         () => setState(() {
           _confirmations++;
-          if (_confirmations >= 3)
+          if (_confirmations >= 3) {
             _success();
-          else
+          } else {
             _notice = 'Confirmação $_confirmations de 3. Ufa.';
+          }
         }),
       ),
     ],
@@ -1089,12 +1091,12 @@ class _HomePageState extends State<HomePage> {
       Align(
         alignment: Alignment.centerRight,
         child: _actionButton('CRIAR CONTA', () {
-          if (!_requirements)
+          if (!_requirements) {
             setState(() {
               _requirements = true;
               _notice = 'A senha não atende aos requisitos.';
             });
-          else if (_password.length >= 8 &&
+          } else if (_password.length >= 8 &&
               _password.toLowerCase().contains('ux'))
             _success();
           else
