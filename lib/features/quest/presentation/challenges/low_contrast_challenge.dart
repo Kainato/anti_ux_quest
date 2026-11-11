@@ -34,6 +34,11 @@ class LowContrastChallenge extends StatelessWidget {
                 onPressed: () => ChallengeRules.isCorrectSkyColor(answer)
                     ? actions.onSuccess()
                     : actions.onNotice('Resposta incorreta. Tente de novo.'),
+                style: ButtonStyle(
+                  mouseCursor: const WidgetStatePropertyAll(
+                    SystemMouseCursors.click,
+                  ),
+                ),
                 child: Text(answer),
               ),
           ],

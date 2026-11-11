@@ -37,12 +37,17 @@ class LetterKeyboard extends StatelessWidget {
             height: keyHeight,
             child: FilledButton(
               onPressed: () => onKeyPressed(letter),
-              style: FilledButton.styleFrom(
-                backgroundColor: palette.surfaceAlt,
-                foregroundColor: palette.textPrimary,
-                padding: EdgeInsets.zero,
-                shape: keyShape,
-              ),
+              style:
+                  FilledButton.styleFrom(
+                    backgroundColor: palette.surfaceAlt,
+                    foregroundColor: palette.textPrimary,
+                    padding: EdgeInsets.zero,
+                    shape: keyShape,
+                  ).copyWith(
+                    mouseCursor: const WidgetStatePropertyAll(
+                      SystemMouseCursors.click,
+                    ),
+                  ),
               child: Text(letter, style: labelStyle),
             ),
           ),

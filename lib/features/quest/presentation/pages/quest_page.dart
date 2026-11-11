@@ -93,12 +93,14 @@ class QuestPage extends StatelessWidget {
       leading: Builder(
         builder: (context) => IconButton(
           onPressed: () => Scaffold.of(context).openDrawer(),
+          mouseCursor: SystemMouseCursors.click,
           icon: const Icon(Icons.menu_rounded),
         ),
       ),
       actions: [
         IconButton(
           onPressed: onToggleTheme,
+          mouseCursor: SystemMouseCursors.click,
           tooltip: isDark ? 'Tema claro' : 'Tema noturno',
           icon: Icon(
             isDark ? Icons.light_mode_rounded : Icons.dark_mode_rounded,

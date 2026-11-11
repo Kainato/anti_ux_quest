@@ -41,6 +41,11 @@ class _FakeLoadingChallengeState extends State<FakeLoadingChallenge> {
         else
           TextButton(
             onPressed: () => setState(() => _sent = true),
+            style: ButtonStyle(
+              mouseCursor: const WidgetStatePropertyAll(
+                SystemMouseCursors.click,
+              ),
+            ),
             child: const Text('AINDA ESTÁ AÍ? TOQUE AQUI'),
           ),
       ],

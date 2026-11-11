@@ -17,17 +17,20 @@ class CompactProgress extends StatelessWidget {
           Expanded(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 2),
-              child: GestureDetector(
-                onTap: () => controller.openLevel(i),
-                child: Container(
-                  height: 6,
-                  decoration: BoxDecoration(
-                    color: controller.canOpen(i)
-                        ? (i == controller.currentIndex
-                              ? palette.accent
-                              : palette.primary)
-                        : palette.progressTrackLocked,
-                    borderRadius: BorderRadius.circular(9),
+              child: MouseRegion(
+                cursor: SystemMouseCursors.click,
+                child: GestureDetector(
+                  onTap: () => controller.openLevel(i),
+                  child: Container(
+                    height: 6,
+                    decoration: BoxDecoration(
+                      color: controller.canOpen(i)
+                          ? (i == controller.currentIndex
+                                ? palette.accent
+                                : palette.primary)
+                          : palette.progressTrackLocked,
+                      borderRadius: BorderRadius.circular(9),
+                    ),
                   ),
                 ),
               ),

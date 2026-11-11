@@ -81,6 +81,11 @@ class _AlphabeticKeyboardChallengeState
                     ? ''
                     : _text.substring(0, _text.length - 1),
               ),
+              style: ButtonStyle(
+                mouseCursor: const WidgetStatePropertyAll(
+                  SystemMouseCursors.click,
+                ),
+              ),
               child: const Text('APAGAR'),
             ),
             const Spacer(),

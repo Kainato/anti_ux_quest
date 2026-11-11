@@ -1,5 +1,7 @@
 import 'package:anti_ux_quest/app/app.dart';
 import 'package:anti_ux_quest/app/composition_root.dart';
+import 'package:anti_ux_quest/app/theme/app_theme.dart';
+import 'package:anti_ux_quest/features/quest/presentation/widgets/tiny_target_dot.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -59,6 +61,27 @@ void main() {
     expect(
       (await SharedPreferences.getInstance()).getString('theme_mode'),
       'light',
+    );
+  });
+
+  testWidgets('alvos customizados usam cursor de clique ao passar o mouse', (
+    tester,
+  ) async {
+    await tester.pumpWidget(
+      MaterialApp(
+        theme: AppTheme.dark,
+        home: Scaffold(
+          body: Center(child: TinyTargetDot(size: 40, onTap: () {})),
+        ),
+      ),
+    );
+
+    expect(
+      find.byWidgetPredicate(
+        (widget) =>
+            widget is MouseRegion && widget.cursor == SystemMouseCursors.click,
+      ),
+      findsOneWidget,
     );
   });
 

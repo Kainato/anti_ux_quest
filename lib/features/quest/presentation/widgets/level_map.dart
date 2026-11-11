@@ -58,6 +58,7 @@ class _LevelMapItem extends StatelessWidget {
     final palette = context.palette;
     return InkWell(
       onTap: onTap,
+      mouseCursor: SystemMouseCursors.click,
       borderRadius: BorderRadius.circular(12),
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),

@@ -31,6 +31,26 @@ abstract final class AppTheme {
       canvasColor: palette.background,
       fontFamily: 'Roboto',
       dividerColor: palette.border,
+      filledButtonTheme: FilledButtonThemeData(
+        style: ButtonStyle(
+          mouseCursor: const WidgetStatePropertyAll(SystemMouseCursors.click),
+        ),
+      ),
+      textButtonTheme: TextButtonThemeData(
+        style: ButtonStyle(
+          mouseCursor: const WidgetStatePropertyAll(SystemMouseCursors.click),
+        ),
+      ),
+      outlinedButtonTheme: OutlinedButtonThemeData(
+        style: ButtonStyle(
+          mouseCursor: const WidgetStatePropertyAll(SystemMouseCursors.click),
+        ),
+      ),
+      iconButtonTheme: IconButtonThemeData(
+        style: ButtonStyle(
+          mouseCursor: const WidgetStatePropertyAll(SystemMouseCursors.click),
+        ),
+      ),
       appBarTheme: AppBarTheme(
         backgroundColor: palette.background,
         foregroundColor: palette.textPrimary,

@@ -43,10 +43,15 @@ class _MovingButtonChallengeState extends State<MovingButtonChallenge> {
                 top: (_slot ~/ 3) * 55.0,
                 child: FilledButton(
                   onPressed: _onPressed,
-                  style: FilledButton.styleFrom(
-                    backgroundColor: palette.accent,
-                    foregroundColor: palette.onPrimary,
-                  ),
+                  style:
+                      FilledButton.styleFrom(
+                        backgroundColor: palette.accent,
+                        foregroundColor: palette.onPrimary,
+                      ).copyWith(
+                        mouseCursor: const WidgetStatePropertyAll(
+                          SystemMouseCursors.click,
+                        ),
+                      ),
                   child: Text(_labels[_slot % _labels.length]),
                 ),
               ),
