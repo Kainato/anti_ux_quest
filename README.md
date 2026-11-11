@@ -1,8 +1,41 @@
 # Anti-UX Quest
 
-Um jogo mobile em Flutter sobre interfaces que testam a paciência. Cada fase propõe uma tarefa simples e a transforma em um desafio com uma prática ruim de UI/UX. Ao concluir, a pessoa vê uma explicação curta e uma alternativa melhor.
+Um jogo em Flutter que transforma tarefas triviais em desafios de sobrevivência digital.
 
-## Fases iniciais
+A proposta é simples: cada fase traz um objetivo claro (por exemplo, digitar uma palavra), mas a interface foi desenhada com as piores práticas possíveis de UI/UX. A pessoa jogadora precisa descobrir como vencer a fricção, completar o objetivo e avançar.
+
+Depois de cada fase, o jogo mostra uma explicação curta sobre o problema de usabilidade usado no desafio e qual seria uma alternativa melhor.
+
+## Conceito do projeto
+
+- Campanha com número de fases aberto (crescimento contínuo por novas atualizações)
+- Bloco inicial com 12 fases jogáveis
+- Cada fase foca em uma anti-prática de UI/UX
+- Objetivo sempre explícito, interface sempre hostil
+- Mistura de humor, frustração controlada e aprendizado por contraste
+
+Premissa:
+
+Um jogo sobre interfaces que parecem testar sua paciência. Complete tarefas simples enquanto enfrenta decisões de UI/UX feitas da pior maneira possível.
+
+## Loop de jogo
+
+1. Jogador abre uma fase no mapa.
+2. Vê o objetivo da vez.
+3. Tenta concluir a tarefa apesar da interface ruim.
+4. Ao concluir, recebe confirmação e um resumo educativo.
+5. Próxima fase é desbloqueada.
+
+## Estrutura da experiência
+
+- AppBar com título dinâmico no formato Fase X
+- Contador de progresso no topo, exibindo fase atual e total da campanha
+- Área central com objetivo, interação principal e ação para concluir
+- Mapa de fases com desbloqueio progressivo
+- Menu lateral opcional com seções auxiliares (como Sobre)
+- Tela de explicação pós-fase (modo reflexão)
+
+## Fases iniciais da campanha (1 a 12)
 
 1. Teclado em ordem alfabética
 2. Botão que muda de lugar
@@ -17,7 +50,27 @@ Um jogo mobile em Flutter sobre interfaces que testam a paciência. Cada fase pr
 11. Progresso parado em 99%
 12. Desafio final combinando obstáculos
 
-O mapa mantém a próxima fase bloqueada até a conclusão da atual. O menu reúne o mapa e informações sobre o projeto. O progresso fica na memória durante a sessão.
+## Objetivos de design
+
+- Frustrar com intenção, sem bloquear de forma impossível
+- Garantir que cada fase tenha solução aprendível
+- Evitar aleatoriedade injusta
+- Transformar dor de uso em material educativo
+- Manter duração curta por fase para ritmo ágil
+
+## Estado atual
+
+- Campanha base de 12 fases implementada
+- Progresso e desbloqueio de fases funcionando
+- Fluxo de conclusão por fase com feedback
+- Conteúdo de apoio disponível no menu (exemplo: Sobre)
+
+## Próximas evoluções
+
+- Novas fases temáticas (acessibilidade, navegação, feedback visual, etc.)
+- Métricas com humor (tempo, cliques, tentativas, índice de sofrimento)
+- Balanceamento de dificuldade por etapa
+- Possível modo alternativo sem spoilers e modo estudo com explicação expandida
 
 ## Executar
 
@@ -29,3 +82,11 @@ flutter run
 ```
 
 O app também pode ser executado nos alvos Flutter configurados neste repositório, como Web e desktop.
+
+## Estrutura de pastas (resumo)
+
+- lib/main.dart: inicialização do app
+- lib/pages/home_page.dart: fluxo principal da campanha
+- lib/controller: estado e controle de jogo
+- lib/class e lib/enum: modelos e tipos de apoio
+- lib/core: tema, utilitários e componentes compartilhados
