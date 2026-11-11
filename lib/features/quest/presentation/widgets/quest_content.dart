@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../app/theme/app_colors.dart';
+import '../../../../app/theme/app_palette.dart';
 import '../challenges/challenge_actions.dart';
 import '../challenges/challenge_factory.dart';
 import '../controllers/quest_controller.dart';
@@ -17,6 +17,7 @@ class QuestContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.palette;
     final level = controller.currentLevel;
     final levelNumber = (controller.currentIndex + 1).toString().padLeft(
       2,
@@ -35,21 +36,21 @@ class QuestContent extends StatelessWidget {
         const SizedBox(height: 30),
         Text(
           'DESAFIO $levelNumber',
-          style: const TextStyle(
+          style: TextStyle(
             fontSize: 11,
             fontWeight: FontWeight.w900,
             letterSpacing: 2,
-            color: AppColors.blue,
+            color: palette.primary,
           ),
         ),
         const SizedBox(height: 8),
         Text(
           level.title,
-          style: const TextStyle(
+          style: TextStyle(
             fontSize: 31,
             height: 1.08,
             fontWeight: FontWeight.w900,
-            color: AppColors.ink,
+            color: palette.textPrimary,
             letterSpacing: -1,
           ),
         ),
@@ -83,23 +84,23 @@ class QuestContent extends StatelessWidget {
           const SizedBox(height: 12),
           Text(
             controller.notice,
-            style: const TextStyle(
-              color: AppColors.coral,
+            style: TextStyle(
+              color: palette.accent,
               fontWeight: FontWeight.w700,
             ),
           ),
         ],
         const SizedBox(height: 18),
-        const Row(
+        Row(
           children: [
-            Icon(Icons.warning_amber_rounded, color: AppColors.coral, size: 16),
-            SizedBox(width: 6),
+            Icon(Icons.warning_amber_rounded, color: palette.accent, size: 16),
+            const SizedBox(width: 6),
             Expanded(
               child: Text(
                 'Prática ruim em jogo. A dificuldade deve ser irritante, nunca impossível.',
                 style: TextStyle(
                   fontSize: 11,
-                  color: AppColors.muted,
+                  color: palette.textMuted,
                   height: 1.3,
                 ),
               ),

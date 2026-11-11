@@ -92,6 +92,9 @@ O projeto segue Clean Architecture, organizado por feature:
 - lib/features/quest/domain: entidades, regras de vitória, contratos de repositório e casos de uso (sem dependência de Flutter)
 - lib/features/quest/data: fontes de dados e implementações dos repositórios (fases e progresso)
 - lib/features/quest/presentation: controller, página, widgets e um widget por desafio
+- lib/features/theme: preferência de tema claro/noturno, persistida com shared_preferences
+
+Cores: use `context.palette` (`AppPalette`, em lib/app/theme) em vez de cores fixas. O tema noturno parte de blue sea `#00C0FE` (primária) e dark night `#0E162C` (fundo); o claro é derivado deles.
 
 Para criar uma nova fase:
 

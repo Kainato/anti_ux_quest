@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../app/theme/app_colors.dart';
+import '../../../../app/theme/app_palette.dart';
 import '../controllers/quest_controller.dart';
 
 class LevelMap extends StatelessWidget {
@@ -55,6 +55,7 @@ class _LevelMapItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.palette;
     return InkWell(
       onTap: onTap,
       borderRadius: BorderRadius.circular(12),
@@ -68,20 +69,19 @@ class _LevelMapItem extends StatelessWidget {
               alignment: Alignment.center,
               decoration: BoxDecoration(
                 color: isActive
-                    ? AppColors.yellow
-                    : (isUnlocked
-                          ? AppColors.mapItemUnlocked
-                          : Colors.transparent),
+                    ? palette.primary
+                    : (isUnlocked ? palette.surfaceAlt : Colors.transparent),
                 shape: BoxShape.circle,
                 border: Border.all(
-                  color: isActive ? AppColors.ink : AppColors.mapItemBorder,
+                  color: isActive ? palette.primary : palette.border,
                 ),
               ),
               child: Text(
                 '${index + 1}',
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 11,
                   fontWeight: FontWeight.w900,
+                  color: isActive ? palette.onPrimary : palette.textPrimary,
                 ),
               ),
             ),
@@ -93,13 +93,13 @@ class _LevelMapItem extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(
                   fontSize: 12,
-                  color: isUnlocked ? AppColors.ink : AppColors.muted,
+                  color: isUnlocked ? palette.textPrimary : palette.textMuted,
                   fontWeight: isActive ? FontWeight.w900 : FontWeight.w500,
                 ),
               ),
             ),
             if (isCompleted)
-              const Icon(Icons.check_rounded, size: 15, color: AppColors.blue),
+              Icon(Icons.check_rounded, size: 15, color: palette.primary),
           ],
         ),
       ),

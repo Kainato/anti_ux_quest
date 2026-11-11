@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../app/theme/app_colors.dart';
+import '../../../../app/theme/app_palette.dart';
 
 class QuestDrawer extends StatelessWidget {
   const QuestDrawer({
@@ -14,8 +14,8 @@ class QuestDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.palette;
     return Drawer(
-      backgroundColor: AppColors.paper,
       child: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -29,10 +29,10 @@ class QuestDrawer extends StatelessWidget {
                     width: 48,
                     height: 48,
                     decoration: BoxDecoration(
-                      color: AppColors.yellow,
+                      color: palette.primary,
                       borderRadius: BorderRadius.circular(15),
                     ),
-                    child: const Icon(Icons.bolt_rounded),
+                    child: Icon(Icons.bolt_rounded, color: palette.onPrimary),
                   ),
                   const SizedBox(height: 12),
                   const Text(
@@ -42,9 +42,9 @@ class QuestDrawer extends StatelessWidget {
                       letterSpacing: 1.6,
                     ),
                   ),
-                  const Text(
+                  Text(
                     'Sobreviva ao design ruim.',
-                    style: TextStyle(color: AppColors.muted),
+                    style: TextStyle(color: palette.textMuted),
                   ),
                 ],
               ),
@@ -72,12 +72,12 @@ class QuestDrawer extends StatelessWidget {
               },
             ),
             const Spacer(),
-            const Padding(
-              padding: EdgeInsets.all(22),
+            Padding(
+              padding: const EdgeInsets.all(22),
               child: Text(
                 'Feito para aprender por contraste.\n12 fases • 12 decisões questionáveis',
                 style: TextStyle(
-                  color: AppColors.muted,
+                  color: palette.textMuted,
                   fontSize: 12,
                   height: 1.5,
                 ),

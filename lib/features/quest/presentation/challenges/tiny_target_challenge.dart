@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../app/theme/app_colors.dart';
+import '../../../../app/theme/app_palette.dart';
 import '../widgets/tiny_target_dot.dart';
 import 'challenge_actions.dart';
 
@@ -17,12 +17,15 @@ class TinyTargetChallenge extends StatelessWidget {
       child: Stack(
         alignment: Alignment.center,
         children: [
-          const Positioned(
+          Positioned(
             right: 12,
             top: 8,
             child: Text(
               'ENVIAR',
-              style: TextStyle(fontSize: 9, color: AppColors.faintLabel),
+              style: TextStyle(
+                fontSize: 9,
+                color: context.palette.textMuted.withValues(alpha: .4),
+              ),
             ),
           ),
           TinyTargetDot(size: 8, onTap: actions.onSuccess),

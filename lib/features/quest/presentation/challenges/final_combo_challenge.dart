@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../app/theme/app_colors.dart';
+import '../../../../app/theme/app_palette.dart';
 import '../../domain/rules/challenge_rules.dart';
 import '../widgets/action_button.dart';
 import '../widgets/letter_keyboard.dart';
@@ -79,9 +79,9 @@ class _FinalComboChallengeState extends State<FinalComboChallenge> {
             onPressed: _confirm,
           )
         else
-          const Text(
+          Text(
             'Envie as duas etapas para liberar o botão.',
-            style: TextStyle(color: AppColors.muted, fontSize: 11),
+            style: TextStyle(color: context.palette.textMuted, fontSize: 11),
           ),
       ],
     );

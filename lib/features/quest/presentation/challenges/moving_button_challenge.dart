@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../app/theme/app_colors.dart';
+import '../../../../app/theme/app_palette.dart';
 import '../../domain/rules/challenge_rules.dart';
 import 'challenge_actions.dart';
 
@@ -29,6 +29,7 @@ class _MovingButtonChallengeState extends State<MovingButtonChallenge> {
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.palette;
     return Column(
       children: [
         SizedBox(
@@ -43,8 +44,8 @@ class _MovingButtonChallengeState extends State<MovingButtonChallenge> {
                 child: FilledButton(
                   onPressed: _onPressed,
                   style: FilledButton.styleFrom(
-                    backgroundColor: AppColors.coral,
-                    foregroundColor: Colors.white,
+                    backgroundColor: palette.accent,
+                    foregroundColor: palette.onPrimary,
                   ),
                   child: Text(_labels[_slot % _labels.length]),
                 ),
@@ -52,9 +53,9 @@ class _MovingButtonChallengeState extends State<MovingButtonChallenge> {
             ],
           ),
         ),
-        const Text(
+        Text(
           'Dica: a persistência também é uma estratégia.',
-          style: TextStyle(fontSize: 12, color: AppColors.muted),
+          style: TextStyle(fontSize: 12, color: palette.textMuted),
         ),
       ],
     );

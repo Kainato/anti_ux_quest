@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../app/theme/app_colors.dart';
+import '../../../../app/theme/app_palette.dart';
 import '../../domain/rules/challenge_rules.dart';
 import '../widgets/action_button.dart';
 import '../widgets/filled_input_decoration.dart';
@@ -40,16 +40,16 @@ class _PasswordChallengeState extends State<PasswordChallenge> {
         TextField(
           obscureText: true,
           onChanged: (value) => _password = value,
-          decoration: filledInputDecoration(labelText: 'Nova senha'),
+          decoration: filledInputDecoration(context, labelText: 'Nova senha'),
         ),
         if (_requirementsRevealed)
-          const Padding(
-            padding: EdgeInsets.only(top: 10),
+          Padding(
+            padding: const EdgeInsets.only(top: 10),
             child: Text(
               'Surpresa! A senha precisa ter ao menos 8 caracteres e incluir “ux”.',
               style: TextStyle(
                 fontSize: 12,
-                color: AppColors.coral,
+                color: context.palette.accent,
                 height: 1.4,
               ),
             ),

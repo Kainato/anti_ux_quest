@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../app/theme/app_colors.dart';
+import '../../../../app/theme/app_palette.dart';
 import '../../domain/rules/challenge_rules.dart';
 import 'challenge_actions.dart';
 
@@ -13,16 +13,17 @@ class LowContrastChallenge extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.palette;
     return Column(
       children: [
-        const Text(
+        Text(
           'A instrução está aqui, mas quase não dá para ler.',
-          style: TextStyle(color: AppColors.faintTextLight, fontSize: 12),
+          style: TextStyle(color: palette.faintText, fontSize: 12),
         ),
         const SizedBox(height: 18),
-        const Text(
+        Text(
           'Qual é a cor do céu em um dia sem nuvens?',
-          style: TextStyle(color: AppColors.faintTextLighter, fontSize: 13),
+          style: TextStyle(color: palette.fainterText, fontSize: 13),
         ),
         const SizedBox(height: 12),
         Wrap(

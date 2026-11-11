@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../app/theme/app_colors.dart';
+import '../../../../app/theme/app_palette.dart';
 
 class TinyTargetDot extends StatelessWidget {
   const TinyTargetDot({super.key, required this.size, required this.onTap});
@@ -15,8 +15,8 @@ class TinyTargetDot extends StatelessWidget {
       child: Container(
         width: size,
         height: size,
-        decoration: const BoxDecoration(
-          color: AppColors.coral,
+        decoration: BoxDecoration(
+          color: context.palette.accent,
           shape: BoxShape.circle,
         ),
       ),

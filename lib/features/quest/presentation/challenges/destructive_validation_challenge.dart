@@ -42,7 +42,10 @@ class _DestructiveValidationChallengeState
       children: [
         TextField(
           controller: _controller,
-          decoration: filledInputDecoration(labelText: 'Palavra secreta'),
+          decoration: filledInputDecoration(
+            context,
+            labelText: 'Palavra secreta',
+          ),
         ),
         const SizedBox(height: 12),
         Align(

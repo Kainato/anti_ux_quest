@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../app/theme/app_colors.dart';
+import '../../../../app/theme/app_palette.dart';
 import '../../domain/rules/challenge_rules.dart';
 import '../widgets/action_button.dart';
 import '../widgets/letter_keyboard.dart';
@@ -30,16 +30,17 @@ class _AlphabeticKeyboardChallengeState
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.palette;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text(
+        Text(
           'CAMPO DE TEXTO',
           style: TextStyle(
             fontSize: 10,
             fontWeight: FontWeight.w900,
             letterSpacing: 1.4,
-            color: AppColors.muted,
+            color: palette.textMuted,
           ),
         ),
         const SizedBox(height: 8),
@@ -47,13 +48,13 @@ class _AlphabeticKeyboardChallengeState
           width: double.infinity,
           padding: const EdgeInsets.all(14),
           decoration: BoxDecoration(
-            color: AppColors.paper,
+            color: palette.background,
             borderRadius: BorderRadius.circular(12),
           ),
           child: Text(
             _text.isEmpty ? 'Toque nas letras abaixo…' : _text,
             style: TextStyle(
-              color: _text.isEmpty ? AppColors.muted : AppColors.ink,
+              color: _text.isEmpty ? palette.textMuted : palette.textPrimary,
               fontSize: 19,
               fontWeight: FontWeight.w700,
             ),

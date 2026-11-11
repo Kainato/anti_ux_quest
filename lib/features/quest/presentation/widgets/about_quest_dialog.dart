@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-import '../../../../app/theme/app_colors.dart';
+import '../../../../app/theme/app_palette.dart';
 
 void showAboutQuestDialog(BuildContext context) {
   showAboutDialog(
     context: context,
     applicationName: 'Anti-UX Quest',
     applicationVersion: '12 fases',
-    applicationIcon: const Icon(
+    applicationIcon: Icon(
       Icons.bolt_rounded,
-      color: AppColors.coral,
+      color: context.palette.primary,
       size: 36,
     ),
     children: const [

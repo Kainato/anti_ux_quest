@@ -1,25 +1,26 @@
 import 'package:flutter/material.dart';
 
-import '../../../../app/theme/app_colors.dart';
+import '../../../../app/theme/app_palette.dart';
 
 class BrandHeader extends StatelessWidget {
   const BrandHeader({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.palette;
     return Row(
       children: [
         Container(
           width: 42,
           height: 42,
           decoration: BoxDecoration(
-            color: AppColors.yellow,
+            color: palette.primary,
             borderRadius: BorderRadius.circular(13),
           ),
-          child: const Icon(Icons.bolt_rounded, color: AppColors.ink),
+          child: Icon(Icons.bolt_rounded, color: palette.onPrimary),
         ),
         const SizedBox(width: 12),
-        const Column(
+        Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
@@ -28,12 +29,12 @@ class BrandHeader extends StatelessWidget {
                 fontSize: 11,
                 fontWeight: FontWeight.w900,
                 letterSpacing: 2,
-                color: AppColors.muted,
+                color: palette.textMuted,
               ),
             ),
             Text(
               'Uma tarefa. Uma péssima interface.',
-              style: TextStyle(fontSize: 12, color: AppColors.muted),
+              style: TextStyle(fontSize: 12, color: palette.textMuted),
             ),
           ],
         ),

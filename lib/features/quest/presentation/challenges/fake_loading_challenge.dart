@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../app/theme/app_colors.dart';
+import '../../../../app/theme/app_palette.dart';
 import '../widgets/action_button.dart';
 import 'challenge_actions.dart';
 
@@ -18,6 +18,7 @@ class _FakeLoadingChallengeState extends State<FakeLoadingChallenge> {
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.palette;
     return Column(
       children: [
         ClipRRect(
@@ -25,8 +26,8 @@ class _FakeLoadingChallengeState extends State<FakeLoadingChallenge> {
           child: LinearProgressIndicator(
             value: _sent ? 1 : .99,
             minHeight: 12,
-            color: AppColors.coral,
-            backgroundColor: AppColors.loadingTrack,
+            color: palette.accent,
+            backgroundColor: palette.progressTrack,
           ),
         ),
         const SizedBox(height: 12),

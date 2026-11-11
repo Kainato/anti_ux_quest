@@ -35,6 +35,7 @@ class _AmbiguousInputChallengeState extends State<AmbiguousInputChallenge> {
           keyboardType: TextInputType.number,
           onChanged: (value) => _value = value,
           decoration: filledInputDecoration(
+            context,
             labelText: 'Identificador',
             hintText: '________',
             helperText: 'Não vamos dizer o formato. Boa sorte.',

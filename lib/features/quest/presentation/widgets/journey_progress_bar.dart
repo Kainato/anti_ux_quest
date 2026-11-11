@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../app/theme/app_colors.dart';
+import '../../../../app/theme/app_palette.dart';
 
 class JourneyProgressBar extends StatelessWidget {
   const JourneyProgressBar({
@@ -14,6 +14,7 @@ class JourneyProgressBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.palette;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -22,19 +23,19 @@ class JourneyProgressBar extends StatelessWidget {
           children: [
             Text(
               '${(progress * 100).round()}% DA JORNADA',
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 10,
                 fontWeight: FontWeight.w900,
                 letterSpacing: 1.4,
-                color: AppColors.muted,
+                color: palette.textMuted,
               ),
             ),
             Text(
               '$completedLevels concluídas',
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 10,
                 fontWeight: FontWeight.w700,
-                color: AppColors.muted,
+                color: palette.textMuted,
               ),
             ),
           ],
@@ -45,8 +46,8 @@ class JourneyProgressBar extends StatelessWidget {
           child: LinearProgressIndicator(
             value: progress,
             minHeight: 7,
-            backgroundColor: AppColors.progressTrack,
-            color: AppColors.blue,
+            backgroundColor: palette.progressTrack,
+            color: palette.primary,
           ),
         ),
       ],

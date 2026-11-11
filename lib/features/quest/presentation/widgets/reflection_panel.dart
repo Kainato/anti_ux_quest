@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../app/theme/app_colors.dart';
+import '../../../../app/theme/app_palette.dart';
 
 class ReflectionPanel extends StatelessWidget {
   const ReflectionPanel({
@@ -18,22 +18,23 @@ class ReflectionPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.palette;
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: AppColors.successSurface,
+        color: palette.successSurface,
         borderRadius: BorderRadius.circular(18),
-        border: Border.all(color: AppColors.successBorder),
+        border: Border.all(color: palette.successBorder),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Row(
+          Row(
             children: [
-              Icon(Icons.check_circle_rounded, color: AppColors.success),
-              SizedBox(width: 8),
-              Text(
+              Icon(Icons.check_circle_rounded, color: palette.success),
+              const SizedBox(width: 8),
+              const Text(
                 'FASE CONCLUÍDA',
                 style: TextStyle(
                   fontWeight: FontWeight.w900,
@@ -46,8 +47,8 @@ class ReflectionPanel extends StatelessWidget {
           const SizedBox(height: 18),
           Text(
             pattern.toUpperCase(),
-            style: const TextStyle(
-              color: AppColors.blue,
+            style: TextStyle(
+              color: palette.primary,
               fontWeight: FontWeight.w900,
               fontSize: 11,
               letterSpacing: 1,
@@ -67,8 +68,8 @@ class ReflectionPanel extends StatelessWidget {
               ),
               label: Text(isLastLevel ? 'JOGAR DE NOVO' : 'PRÓXIMA FASE'),
               style: FilledButton.styleFrom(
-                backgroundColor: AppColors.ink,
-                foregroundColor: Colors.white,
+                backgroundColor: palette.primary,
+                foregroundColor: palette.onPrimary,
                 padding: const EdgeInsets.symmetric(vertical: 15),
               ),
             ),

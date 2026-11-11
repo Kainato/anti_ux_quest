@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../../app/theme/app_colors.dart';
 import '../controllers/quest_controller.dart';
 import '../widgets/about_quest_dialog.dart';
 import '../widgets/compact_progress.dart';
@@ -10,23 +9,27 @@ import '../widgets/quest_content.dart';
 import '../widgets/quest_drawer.dart';
 
 class QuestPage extends StatelessWidget {
-  const QuestPage({super.key, required this.controller});
+  const QuestPage({
+    super.key,
+    required this.controller,
+    required this.onToggleTheme,
+  });
 
   static const _wideBreakpoint = 720.0;
 
   final QuestController controller;
+  final VoidCallback onToggleTheme;
 
   @override
   Widget build(BuildContext context) {
     return ListenableBuilder(
       listenable: controller,
       builder: (context, _) => Scaffold(
-        backgroundColor: AppColors.paper,
         drawer: QuestDrawer(
           onShowLevels: () => showLevelListSheet(context, controller),
           onShowAbout: () => showAboutQuestDialog(context),
         ),
-        appBar: _buildAppBar(),
+        appBar: _buildAppBar(context),
         body: SafeArea(
           child: LayoutBuilder(
             builder: (context, bounds) {
@@ -75,11 +78,9 @@ class QuestPage extends StatelessWidget {
     );
   }
 
-  AppBar _buildAppBar() {
+  AppBar _buildAppBar(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return AppBar(
-      backgroundColor: AppColors.paper,
-      foregroundColor: AppColors.ink,
-      elevation: 0,
       titleSpacing: 4,
       title: Text(
         'FASE ${(controller.currentIndex + 1).toString().padLeft(2, '0')}',
@@ -96,8 +97,15 @@ class QuestPage extends StatelessWidget {
         ),
       ),
       actions: [
+        IconButton(
+          onPressed: onToggleTheme,
+          tooltip: isDark ? 'Tema claro' : 'Tema noturno',
+          icon: Icon(
+            isDark ? Icons.light_mode_rounded : Icons.dark_mode_rounded,
+          ),
+        ),
         Padding(
-          padding: const EdgeInsets.only(right: 18),
+          padding: const EdgeInsets.only(right: 18, left: 4),
           child: Center(
             child: Text(
               '${controller.currentIndex + 1} / ${controller.levels.length}',

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../../../app/theme/app_colors.dart';
+import '../../../../app/theme/app_palette.dart';
 
-InputDecoration filledInputDecoration({
+InputDecoration filledInputDecoration(
+  BuildContext context, {
   required String labelText,
   String? hintText,
   String? helperText,
@@ -12,7 +13,7 @@ InputDecoration filledInputDecoration({
     hintText: hintText,
     helperText: helperText,
     filled: true,
-    fillColor: AppColors.paper,
+    fillColor: context.palette.background,
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(12),
       borderSide: BorderSide.none,

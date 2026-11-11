@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../app/theme/app_colors.dart';
+import '../../../../app/theme/app_palette.dart';
 
 class LetterKeyboard extends StatelessWidget {
   const LetterKeyboard({
@@ -26,6 +26,7 @@ class LetterKeyboard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.palette;
     return Wrap(
       spacing: spacing,
       runSpacing: runSpacing,
@@ -37,8 +38,8 @@ class LetterKeyboard extends StatelessWidget {
             child: FilledButton(
               onPressed: () => onKeyPressed(letter),
               style: FilledButton.styleFrom(
-                backgroundColor: AppColors.keyBackground,
-                foregroundColor: AppColors.ink,
+                backgroundColor: palette.surfaceAlt,
+                foregroundColor: palette.textPrimary,
                 padding: EdgeInsets.zero,
                 shape: keyShape,
               ),

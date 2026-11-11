@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../app/theme/app_colors.dart';
+import '../../../../app/theme/app_palette.dart';
 
 class ObjectivePanel extends StatelessWidget {
   const ObjectivePanel({super.key, required this.objective});
@@ -9,25 +9,26 @@ class ObjectivePanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.palette;
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: AppColors.objectiveSurface,
+        color: palette.surfaceAlt,
         borderRadius: BorderRadius.circular(16),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Icon(Icons.flag_rounded, size: 19, color: AppColors.coral),
+          Icon(Icons.flag_rounded, size: 19, color: palette.accent),
           const SizedBox(width: 10),
           Expanded(
             child: Text(
               objective,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 15,
                 height: 1.4,
                 fontWeight: FontWeight.w600,
-                color: AppColors.ink,
+                color: palette.textPrimary,
               ),
             ),
           ),

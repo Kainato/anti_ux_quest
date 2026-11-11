@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../app/theme/app_colors.dart';
+import '../../../../app/theme/app_palette.dart';
 import '../controllers/quest_controller.dart';
 
 class CompactProgress extends StatelessWidget {
@@ -10,6 +10,7 @@ class CompactProgress extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final palette = context.palette;
     return Row(
       children: [
         for (var i = 0; i < controller.levels.length; i++)
@@ -23,9 +24,9 @@ class CompactProgress extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: controller.canOpen(i)
                         ? (i == controller.currentIndex
-                              ? AppColors.coral
-                              : AppColors.blue)
-                        : AppColors.progressSegmentLocked,
+                              ? palette.accent
+                              : palette.primary)
+                        : palette.progressTrackLocked,
                     borderRadius: BorderRadius.circular(9),
                   ),
                 ),
