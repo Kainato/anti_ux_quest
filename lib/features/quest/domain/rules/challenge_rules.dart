@@ -14,7 +14,7 @@ abstract final class ChallengeRules {
   static bool isTargetWord(String input) => input.toLowerCase() == targetWord;
 
   static bool isValidIdentifier(String input) =>
-      input.replaceAll(RegExp(r'\D'), '').length == identifierLength;
+      RegExp(r'^(?:\d{8}|\d{4}-\d{4})$').hasMatch(input);
 
   static bool meetsPasswordRequirements(String password) =>
       password.length >= minPasswordLength &&
