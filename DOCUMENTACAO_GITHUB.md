@@ -224,8 +224,8 @@ Responsabilidades:
 Arquivos comuns nesta área:
 
 - `levels_local_data_source.dart`: dados locais das fases;
-- `quest_repository_impl.dart`: implementação concreta do repositório de progresso ou de fases;
-- `theme_repository_impl.dart` (quando houver) ou similar: persistência do tema, se for necessário.
+- `level_repository_impl.dart`: implementação concreta do repositório de fases;
+- `in_memory_progress_repository.dart`: implementação em memória do repositório de progresso;
 
 Essa camada permite que a lógica de negócio não dependa diretamente de uma fonte específica de dados.
 
