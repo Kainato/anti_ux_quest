@@ -202,11 +202,10 @@ Esta camada concentra as regras de negócio e os contratos fundamentais do domí
 
 Arquivos e responsabilidades:
 
-- `challenge_actions.dart`: define ações executadas em resposta ao resultado de uma etapa, como sucesso, aviso ou erro;
 - `challenge_type.dart`: enumeração das fases ou formatos de desafio;
 - `challenge_rules.dart`: regras de validação para cada etapa, como "qual palavra é alvo" ou "qual ação é correta";
 - `level.dart`: modelo de uma fase do jogo;
-- `quest_state.dart`: estado geral da campanha ou do progresso do jogador;
+- `game_progress.dart`: estado do progresso e das fases concluídas;
 - `repositories/`: interfaces de repositorios que definem como os dados serão acessados.
 
 A camada de domínio não deve depender de Flutter. Ela deve conter apenas regra e modelagem do jogo, sem UI.
