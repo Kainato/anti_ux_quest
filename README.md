@@ -1,48 +1,104 @@
 # Anti-UX Quest
 
-O **Anti-UX Quest** é uma aplicação interativa criada com um único propósito: reunir as **piores decisões de experiência do usuário** possíveis em um único formulário. A ideia é criar um ambiente absurdamente caótico e frustrante para que desenvolvedores, designers e entusiastas possam refletir sobre acessibilidade e usabilidade... enquanto tentam (e falham) preencher um simples cadastro.
+Um jogo em Flutter que transforma tarefas triviais em desafios de sobrevivência digital.
 
----
+A proposta é simples: cada fase traz um objetivo claro (por exemplo, digitar uma palavra), mas a interface foi desenhada com as piores práticas possíveis de UI/UX. A pessoa jogadora precisa descobrir como vencer a fricção, completar o objetivo e avançar.
 
-## 🎯 Objetivo do Projeto
+Depois de cada fase, o jogo mostra uma explicação curta sobre o problema de usabilidade usado no desafio e qual seria uma alternativa melhor.
 
-Transformar conceitos abstratos de **Design System**, **Acessibilidade (WCAG)** e **Heurísticas de Nielsen** em um contraexemplo prático e divertido. Em vez de apenas ler o que *não* fazer, você vivencia a dor do usuário em sua forma mais pura.
+## Conceito do projeto
 
-## 🛠️ Tecnologias Utilizadas
+- Campanha com número de fases aberto (crescimento contínuo por novas atualizações)
+- Bloco inicial com 12 fases jogáveis
+- Cada fase foca em uma anti-prática de UI/UX
+- Objetivo sempre explícito, interface sempre hostil
+- Mistura de humor, frustração controlada e aprendizado por contraste
 
-<p>
-  <img src="https://skillicons.dev/icons?i=flutter,dart" />
-</p>
+Premissa:
 
-Flutter · Dart · Provider
+Um jogo sobre interfaces que parecem testar sua paciência. Complete tarefas simples enquanto enfrenta decisões de UI/UX feitas da pior maneira possível.
 
+## Loop de jogo
 
-## 🚀 Como Rodar o Projeto
+1. Jogador abre uma fase no mapa.
+2. Vê o objetivo da vez.
+3. Tenta concluir a tarefa apesar da interface ruim.
+4. Ao concluir, recebe confirmação e um resumo educativo.
+5. Próxima fase é desbloqueada.
 
-1. **Clone o repositório:**
+## Estrutura da experiência
 
-```bash
-git clone https://github.com/Kainato/anti-ux-playground.git
-```
+- AppBar com título dinâmico no formato Fase X
+- Contador de progresso no topo, exibindo fase atual e total da campanha
+- Área central com objetivo, interação principal e ação para concluir
+- Mapa de fases com desbloqueio progressivo
+- Menu lateral opcional com seções auxiliares (como Sobre)
+- Tela de explicação pós-fase (modo reflexão)
 
-2. **Acesse a pasta do projeto:**
+## Fases iniciais da campanha (1 a 12)
 
-```bash
-cd anti-ux-playground
-```
+1. Teclado em ordem alfabética
+2. Botão que muda de lugar
+3. Formato de campo escondido
+4. Validação que apaga os dados
+5. Alvo minúsculo
+6. Texto com baixo contraste
+7. Opções visualmente iguais
+8. Confirmações repetidas
+9. Ação escondida no fim da tela
+10. Requisitos de senha revelados tarde
+11. Progresso parado em 99%
+12. Desafio final combinando obstáculos
 
-3. **Instale as dependências:**
+## Objetivos de design
+
+- Frustrar com intenção, sem bloquear de forma impossível
+- Garantir que cada fase tenha solução aprendível
+- Evitar aleatoriedade injusta
+- Transformar dor de uso em material educativo
+- Manter duração curta por fase para ritmo ágil
+
+## Estado atual
+
+- Campanha base de 12 fases implementada
+- Progresso e desbloqueio de fases funcionando
+- Fluxo de conclusão por fase com feedback
+- Conteúdo de apoio disponível no menu (exemplo: Sobre)
+
+## Próximas evoluções
+
+- Novas fases temáticas (acessibilidade, navegação, feedback visual, etc.)
+- Métricas com humor (tempo, cliques, tentativas, índice de sofrimento)
+- Balanceamento de dificuldade por etapa
+- Possível modo alternativo sem spoilers e modo estudo com explicação expandida
+
+## Executar
+
+Requisitos: Flutter instalado.
 
 ```bash
 flutter pub get
+flutter run
 ```
 
-## 🤝 Como Contribuir
+O app também pode ser executado nos alvos Flutter configurados neste repositório, como Web e desktop.
 
-Tem uma ideia de campo ainda pior? Sinta-se à vontade para enviar uma Pull Request!
+## Estrutura de pastas (resumo)
 
-1. Faça um **Fork** do projeto
-2. Crie sua Feature Branch (`git checkout -b feature/pior-input-do-mundo`)
-3. Faça o **Commit** das suas alterações (`git commit -m 'Add: Input de CEP que exige código Morse'`)
-4. Faça o **Push** para a Branch (`git push origin feature/pior-input-do-mundo`)
-5. Abra uma **Pull Request**
+O projeto segue Clean Architecture, organizado por feature:
+
+- lib/main.dart: ponto de entrada
+- lib/app: MaterialApp, tema e raiz de composição (injeção de dependências)
+- lib/features/quest/domain: entidades, regras de vitória, contratos de repositório e casos de uso (sem dependência de Flutter)
+- lib/features/quest/data: fontes de dados e implementações dos repositórios (fases e progresso)
+- lib/features/quest/presentation: controller, página, widgets e um widget por desafio
+- lib/features/theme: preferência de tema claro/noturno, persistida com shared_preferences
+
+Cores: use `context.palette` (`AppPalette`, em lib/app/theme) em vez de cores fixas. O tema noturno parte de blue sea `#00C0FE` (primária) e dark night `#0E162C` (fundo); o claro é derivado deles.
+
+Para criar uma nova fase:
+
+1. Adicione um valor em `ChallengeType`.
+2. Cadastre o `Level` em `levels_local_data_source.dart`.
+3. Crie o widget do desafio em `presentation/challenges` e registre-o em `challenge_factory.dart`.
+4. Se houver validação, coloque a regra em `ChallengeRules`.
