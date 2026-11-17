@@ -1,15 +1,16 @@
-import 'package:anti_ux_quest/core/core_material.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MainApp());
-}
+import 'app/app.dart';
+import 'app/composition_root.dart';
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final dependencies = await buildDependencies();
 
-  @override
-  Widget build(BuildContext context) {
-    return CoreMaterial();
-  }
+  runApp(
+    AntiUxQuestApp(
+      questController: dependencies.questController,
+      themeController: dependencies.themeController,
+    ),
+  );
 }
