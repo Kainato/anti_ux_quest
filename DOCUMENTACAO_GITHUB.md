@@ -31,12 +31,8 @@ anti_ux_quest/
 ├── ios/
 ├── lib/
 │   ├── app/
-│   ├── core/
-│   ├── enum/
-│   ├── extension/
 │   ├── features/
 │   ├── main.dart
-│   └── pages/
 ├── linux/
 ├── macos/
 ├── test/
