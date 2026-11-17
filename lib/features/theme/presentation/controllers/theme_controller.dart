@@ -7,9 +7,8 @@ import '../../domain/usecases/save_theme_mode.dart';
 class ThemeController extends ChangeNotifier {
   ThemeController({
     required GetThemeMode getThemeMode,
-    required SaveThemeMode saveThemeMode,
-  }) : _mode = getThemeMode(),
-       _saveThemeMode = saveThemeMode;
+    required this._saveThemeMode,
+  }) : _mode = getThemeMode();
 
   final SaveThemeMode _saveThemeMode;
   AppThemeMode _mode;

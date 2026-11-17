@@ -10,10 +10,9 @@ class QuestController extends ChangeNotifier {
   QuestController({
     required GetLevels getLevels,
     required GetProgress getProgress,
-    required CompleteLevel completeLevel,
+    required this._completeLevel,
   }) : _levels = getLevels(),
-       _progress = getProgress(),
-       _completeLevel = completeLevel;
+       _progress = getProgress();
 
   final List<Level> _levels;
   final CompleteLevel _completeLevel;
