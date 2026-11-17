@@ -458,18 +458,6 @@ Em resumo:
 
 Essa combinação permite que o repositório seja entendível tanto para quem quer conhecer o produto quanto para quem quer evoluir a arquitetura do código.
 
-- crescimento do projeto;
-- criação de novas fases;
-- testes automatizados;
-- atualização de sistemas e regras.
-
-Sem essa separação, uma funcionalidade como "mostrar um novo desafio" exigiria alterar múltiplos pontos do código ao mesmo tempo. Com a arquitetura atual, normalmente basta:
-
-1. criar ou ajustar a regra no domínio;
-2. adicionar o data source ou repositório relacionado;
-3. registrar o desafio na fábrica;
-4. renderizar o widget na UI.
-
 ---
 
 ## 15. Por Fim
