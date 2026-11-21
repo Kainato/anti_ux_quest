@@ -1,4 +1,4 @@
-package com.example.anti_ux_quest
+package com.kainato.anti_ux_quest
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.anti_ux_quest"
+    namespace = "com.kainato.anti_ux_quest"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -21,7 +21,7 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId = "com.example.anti_ux_quest"
+        applicationId = "com.kainato.anti_ux_quest"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = flutter.minSdkVersion
