@@ -85,9 +85,7 @@ O app também pode ser executado nos alvos Flutter configurados neste repositór
 
 ## Politica de Privacidade
 
-URL publica da Politica de Privacidade do app:
-
-https://kainato.github.io/anti_ux_quest/privacy-policy.html
+[URL publica da Politica de Privacidade do app](https://kainato.github.io/anti_ux_quest/privacy-policy.html)
 
 Esse mesmo link deve ser informado na pagina de detalhes do app na Google Play Console (campo de politica de privacidade).
 
