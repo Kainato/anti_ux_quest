@@ -28,6 +28,7 @@ class QuestPage extends StatelessWidget {
         drawer: QuestDrawer(
           onShowLevels: () => showLevelListSheet(context, controller),
           onShowAbout: () => showAboutQuestDialog(context),
+          onOpenPrivacyPolicy: () => openPrivacyPolicy(context),
         ),
         appBar: _buildAppBar(context),
         body: SafeArea(

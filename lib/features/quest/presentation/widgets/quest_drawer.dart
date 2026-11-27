@@ -7,10 +7,12 @@ class QuestDrawer extends StatelessWidget {
     super.key,
     required this.onShowLevels,
     required this.onShowAbout,
+    required this.onOpenPrivacyPolicy,
   });
 
   final VoidCallback onShowLevels;
   final VoidCallback onShowAbout;
+  final VoidCallback onOpenPrivacyPolicy;
 
   @override
   Widget build(BuildContext context) {
@@ -69,6 +71,14 @@ class QuestDrawer extends StatelessWidget {
               onTap: () {
                 Navigator.pop(context);
                 onShowAbout();
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.privacy_tip_outlined),
+              title: const Text('Politica de Privacidade'),
+              onTap: () {
+                Navigator.pop(context);
+                onOpenPrivacyPolicy();
               },
             ),
             const Spacer(),

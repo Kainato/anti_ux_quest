@@ -83,6 +83,14 @@ flutter run
 
 O app também pode ser executado nos alvos Flutter configurados neste repositório, como Web e desktop.
 
+## Politica de Privacidade
+
+URL publica da Politica de Privacidade do app:
+
+https://kainato.github.io/anti_ux_quest/privacy-policy.html
+
+Esse mesmo link deve ser informado na pagina de detalhes do app na Google Play Console (campo de politica de privacidade).
+
 ## Estrutura de pastas (resumo)
 
 O projeto segue Clean Architecture, organizado por feature:
